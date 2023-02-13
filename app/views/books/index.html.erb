@@ -1,2 +1,36 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<p id="notice"></p>
+<h1>Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  </tbody>
+</table>
+
+
+<h2>New book</h2>
+
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
+
+  <div class="field">
+    <label>Title</label>
+    <span><%= f.text_field :title %></span>
+  </div>
+
+  <div class="fiels">
+    <label>Body</label>
+    <span><%= f.text_area :body %></span>
+  </div>
+
+  <div class="botton">
+    <%= f.submit 'Create Book' %>
+  </div>
+
+<% end %>
